@@ -14,7 +14,6 @@ A full-stack web application that predicts the Air Quality Index (AQI) in real t
 - Prerequisites
 - Installation & setup (Backend, Frontend)
 - Running with Docker
-- Jenkins CI
 - Usage
 - Project structure
 - Future enhancements
@@ -150,25 +149,6 @@ Check docker-compose.yml for service names and port mappings and adjust the `.en
 
 ---
 
-## Jenkins CI
-
-This repository includes a Jenkinsfile at the repository root which provides a starting pipeline for CI. The Jenkins pipeline typically runs the following stages (customize as needed):
-
-- Checkout: pull the repository from GitHub
-- Setup backend: create a Python environment and install dependencies
-- Backend tests / lint: run unit tests or linting if available
-- Setup frontend: install node dependencies and run build or tests
-- Build Docker images (optional): build backend/frontend images and push to a registry
-- Deploy (optional): deploy to a test/staging environment
-
-How to use the Jenkinsfile locally or on your Jenkins server:
-1. Create a Jenkins pipeline job and point it to this repository.
-2. Ensure Jenkins has credentials and environment variables configured (e.g., OPENWEATHER_API_KEY, Docker registry credentials).
-3. If using agents, make sure agents have Docker, Python and Node.js installed (or use containerized agents).
-
-If you want, I can extract and document the exact stages defined in the current Jenkinsfile and add a short section here with the pipeline steps and required environment variables.
-
----
 
 ## Usage
 
@@ -193,7 +173,6 @@ air-quality-prediction/
 │   ├── package.json
 │   └── ...
 ├── docker-compose.yml
-├── Jenkinsfile
 └── README.md
 ```
 
